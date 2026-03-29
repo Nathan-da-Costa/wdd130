@@ -88,3 +88,4 @@ else:
     print("\nOh, no!!!! You couldn't decide yourself, the Dementors have surrounded the platform and you feel a big chill. GAME OVER.")
 
 print("\nThank you for playing!")
+  
