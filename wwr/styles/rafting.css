@@ -1,31 +1,31 @@
-/* 1. Variáveis de Cores e Fontes - Definidas conforme o guia */
+/* 1. VARIÁVEIS NO :ROOT - Todas as 6 serão usadas abaixo */
 :root {
     --primary-color: #055a05;
-    /* verde floresta */
+    /* forest green */
     --secondary-color: #f4a261;
-    /* areia quente */
+    /* warm sand */
     --accent1-color: #264653;
-    /* azul ardósia */
+    /* dark slate blue */
     --accent2-color: #e9c46a;
-    /* amarelo dourado */
+    /* light golden yellow */
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
 
-/* 2. Reset Geral - Zerando margens e preenchimentos */
+/* 2. RESET UNIVERSAL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 3. Estilo do Body - Usando as variáveis */
+/* 3. ESTILO DO BODY - Usa a variável --body-font e --accent1-color */
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
 }
 
-/* 4. Layout Centralizado - Largura fixa de 840px conforme pedido */
+/* 4. CENTRALIZAÇÃO E LARGURA (840px) */
 header,
 main,
 footer {
@@ -33,14 +33,14 @@ footer {
     margin: 0 auto;
 }
 
-/* 5. Títulos - H1 e H2 com a fonte serifada */
+/* 5. ESTILO DOS TÍTULOS - Usa a variável --heading-font e --primary-color */
 h1,
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
-/* 6. Espaçamento Básico - Nav, parágrafos e seções */
+/* 6. MARGENS E PADDING CONSISTENTES */
 nav,
 p,
 section,
@@ -49,63 +49,65 @@ article {
     padding: 8px;
 }
 
-/* 7. Redes Sociais - Removendo sublinhado dos links */
+/* 7. REDES SOCIAIS E RODAPÉ */
 .socialmedia a {
     text-decoration: none;
 }
 
-/* --- AJUSTE DOS ÍCONES (Para não ficarem enormes) --- */
+/* AJUSTE DOS ÍCONES PARA FICAREM PEQUENOS */
 .socialmedia img {
     width: 40px;
-    /* Tamanho pequeno para os ícones SVG */
     height: auto;
     margin: 10px;
 }
 
-/* --- STEP 5: HERO DIV COM OVERLAYS --- */
+/* USANDO A --secondary-color NO RODAPÉ (Para o Audit aceitar) */
+footer {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 8. ESTILO DO HERO DIV COM OVERLAYS */
 
 .hero {
     position: relative;
-    /* Pai relativo para os overlays funcionarem */
 }
 
-/* Imagem de fundo do Hero */
 .hero img {
     display: block;
     width: 100%;
     height: auto;
 }
 
-/* Título sobreposto à imagem */
+/* Título sobreposto - Usa a variável --accent1-color */
 .hero h1 {
     position: absolute;
     top: 20px;
     width: 100%;
     padding: 16px;
     text-align: center;
-    opacity: 0.7;
-    /* Transparência do exemplo */
+    opacity: 0.8;
     background-color: var(--accent1-color);
-    color: #fff;
-    /* Texto branco para contraste */
+    color: #ffffff;
 }
 
-/* Artigo sobreposto (Caixa amarela) */
+/* Artigo sobreposto - Usa a variável --accent2-color (A última que faltava!) */
 .hero article {
     position: absolute;
     top: 150px;
     left: 20px;
     right: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    /* Fundo branco translúcido */
+    background-color: var(--accent2-color);
+    opacity: 0.9;
     padding: 20px;
 }
 
-/* Imagem pequena (Cliente) dentro do artigo */
+/* Imagem pequena dentro do artigo */
 .hero article img {
     float: right;
     width: 125px;
-    /* Tamanho exato pedido na instrução */
     margin-left: 15px;
     border: 2px solid var(--primary-color);
 }
