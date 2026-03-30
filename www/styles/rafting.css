@@ -1,0 +1,105 @@
+/* 1. VARIÁVEIS NO :ROOT */
+:root {
+    --primary-color: #055a05;
+    /* forest green */
+    --secondary-color: #f4a261;
+    /* warm sand */
+    --accent1-color: #264653;
+    /* dark slate blue */
+    --accent2-color: #e9c46a;
+    /* light golden yellow */
+    --heading-font: "Times New Roman", "Georgia", serif;
+    --body-font: Arial, Helvetica, sans-serif;
+}
+
+/* 2. RESET UNIVERSAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3. ESTILO DO BODY */
+body {
+    font-family: var(--body-font);
+    color: var(--accent1-color);
+}
+
+/* 4. CENTRALIZAÇÃO E LARGURA (840px) */
+header,
+main,
+footer {
+    width: 840px;
+    margin: 0 auto;
+}
+
+/* 5. ESTILO DOS TÍTULOS (H1 e H2) */
+/* Nota: O h1 será sobrescrito pelo posicionamento absoluto abaixo */
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+/* 6. MARGENS E PADDING CONSISTENTES */
+nav,
+p,
+section,
+article {
+    margin: 16px;
+    padding: 8px;
+}
+
+/* 7. REMOVER SUBLINHADO DAS REDES SOCIAIS */
+.socialmedia a {
+    text-decoration: none;
+}
+
+/* --- TERCEIRA PARTE: ESTILO DO HERO DIV COM OVERLAYS --- */
+
+/* Posicionamento relativo para que os filhos (h1 e article) usem ele como base */
+.hero {
+    position: relative;
+}
+
+/* Imagem principal do Hero preenchendo 100% da largura */
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Título H1 sobreposto à imagem */
+.hero h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    opacity: 0.7;
+    background-color: var(--accent1-color);
+    color: #fff;
+    /* Texto branco para contraste */
+}
+
+/* Artigo sobreposto à imagem */
+.hero article {
+    position: absolute;
+    top: 150px;
+    /* Ajuste este valor se precisar descer ou subir o texto */
+    left: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Fundo branco semi-transparente para leitura */
+    padding: 20px;
+}
+
+/* Imagem pequena dentro do artigo (Cliente feliz) */
+.hero article img {
+    float: right;
+    width: 125px;
+    margin-left: 15px;
+    /* Espaço entre o texto e a foto */
+    border: 2px solid var(--primary-color);
+    /* Estilo adicional opcional */
+}
