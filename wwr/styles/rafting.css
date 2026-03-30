@@ -1,31 +1,31 @@
-/* 1. VARIÁVEIS NO :ROOT */
+/* 1. Variáveis de Cores e Fontes - Definidas conforme o guia */
 :root {
     --primary-color: #055a05;
-    /* forest green */
+    /* verde floresta */
     --secondary-color: #f4a261;
-    /* warm sand */
+    /* areia quente */
     --accent1-color: #264653;
-    /* dark slate blue */
+    /* azul ardósia */
     --accent2-color: #e9c46a;
-    /* light golden yellow */
+    /* amarelo dourado */
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
 
-/* 2. RESET UNIVERSAL */
+/* 2. Reset Geral - Zerando margens e preenchimentos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 3. ESTILO DO BODY */
+/* 3. Estilo do Body - Usando as variáveis */
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
 }
 
-/* 4. CENTRALIZAÇÃO E LARGURA (840px) */
+/* 4. Layout Centralizado - Largura fixa de 840px conforme pedido */
 header,
 main,
 footer {
@@ -33,15 +33,14 @@ footer {
     margin: 0 auto;
 }
 
-/* 5. ESTILO DOS TÍTULOS (H1 e H2) */
-/* Nota: O h1 será sobrescrito pelo posicionamento absoluto abaixo */
+/* 5. Títulos - H1 e H2 com a fonte serifada */
 h1,
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
-/* 6. MARGENS E PADDING CONSISTENTES */
+/* 6. Espaçamento Básico - Nav, parágrafos e seções */
 nav,
 p,
 section,
@@ -50,26 +49,34 @@ article {
     padding: 8px;
 }
 
-/* 7. REMOVER SUBLINHADO DAS REDES SOCIAIS */
+/* 7. Redes Sociais - Removendo sublinhado dos links */
 .socialmedia a {
     text-decoration: none;
 }
 
-/* --- TERCEIRA PARTE: ESTILO DO HERO DIV COM OVERLAYS --- */
-
-/* Posicionamento relativo para que os filhos (h1 e article) usem ele como base */
-.hero {
-    position: relative;
+/* --- AJUSTE DOS ÍCONES (Para não ficarem enormes) --- */
+.socialmedia img {
+    width: 40px;
+    /* Tamanho pequeno para os ícones SVG */
+    height: auto;
+    margin: 10px;
 }
 
-/* Imagem principal do Hero preenchendo 100% da largura */
+/* --- STEP 5: HERO DIV COM OVERLAYS --- */
+
+.hero {
+    position: relative;
+    /* Pai relativo para os overlays funcionarem */
+}
+
+/* Imagem de fundo do Hero */
 .hero img {
     display: block;
     width: 100%;
     height: auto;
 }
 
-/* Título H1 sobreposto à imagem */
+/* Título sobreposto à imagem */
 .hero h1 {
     position: absolute;
     top: 20px;
@@ -77,29 +84,28 @@ article {
     padding: 16px;
     text-align: center;
     opacity: 0.7;
+    /* Transparência do exemplo */
     background-color: var(--accent1-color);
     color: #fff;
     /* Texto branco para contraste */
 }
 
-/* Artigo sobreposto à imagem */
+/* Artigo sobreposto (Caixa amarela) */
 .hero article {
     position: absolute;
     top: 150px;
-    /* Ajuste este valor se precisar descer ou subir o texto */
     left: 20px;
     right: 20px;
     background-color: rgba(255, 255, 255, 0.8);
-    /* Fundo branco semi-transparente para leitura */
+    /* Fundo branco translúcido */
     padding: 20px;
 }
 
-/* Imagem pequena dentro do artigo (Cliente feliz) */
+/* Imagem pequena (Cliente) dentro do artigo */
 .hero article img {
     float: right;
     width: 125px;
+    /* Tamanho exato pedido na instrução */
     margin-left: 15px;
-    /* Espaço entre o texto e a foto */
     border: 2px solid var(--primary-color);
-    /* Estilo adicional opcional */
 }
