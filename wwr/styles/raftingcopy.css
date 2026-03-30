@@ -6,6 +6,7 @@
     --body-font: Arial, sans-serif;
 }
 
+/* Reset Universal */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +25,7 @@ footer {
     margin: 0 auto;
 }
 
-/* --- HEADER --- */
+/* Layout do Header */
 header {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -36,18 +37,18 @@ header img {
     width: 120px;
 }
 
-nav {
+header nav {
     display: flex;
     justify-content: space-around;
 }
 
-nav a {
+header nav a {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: bold;
 }
 
-/* --- HERO --- */
+/* Hero Overlay (Essencial para o relatório) */
 .hero {
     position: relative;
 }
@@ -82,44 +83,26 @@ h1 {
     margin-left: 15px;
 }
 
-/* --- HISTORY (Grid) --- */
-.history-content {
-    display: grid;
-    grid-template-columns: 1fr 200px 1fr;
-    gap: 20px;
-    align-items: center;
-    margin: 20px 0;
-}
-
-/* --- ADVENTURE GRID (O segredo do alinhamento) --- */
+/* Grid de Aventuras - Alinhadas e proporcionais */
 .adventure-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    /* 5 colunas iguais */
     gap: 10px;
     margin: 20px 0;
 }
 
 .adventure-grid figure {
-    margin: 0;
     text-align: center;
 }
 
 .adventure-grid img {
     width: 100%;
     height: 150px;
-    /* Define uma altura fixa para todas ficarem iguais */
     object-fit: cover;
-    /* Corta a imagem para preencher sem distorcer */
     border: 1px solid #ccc;
 }
 
-.adventure-grid figcaption {
-    margin-top: 8px;
-    font-weight: bold;
-}
-
-/* --- FOOTER --- */
+/* Footer */
 footer {
     display: flex;
     justify-content: space-between;
@@ -134,4 +117,8 @@ footer {
 
 .socialmedia img {
     width: 35px;
+}
+
+.socialmedia a {
+    text-decoration: none;
 }
