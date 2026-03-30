@@ -1,0 +1,200 @@
+/* 1. VARIÁVEIS NO :ROOT - Cores e Fontes */
+:root {
+    --primary-color: #055a05;
+    /* Forest Green */
+    --secondary-color: #f4a261;
+    /* Warm Sand */
+    --accent1-color: #264653;
+    /* Dark Slate Blue */
+    --accent2-color: #e9c46a;
+    /* Light Golden Yellow */
+    --heading-font: "Times New Roman", "Georgia", serif;
+    --body-font: Arial, Helvetica, sans-serif;
+}
+
+/* 2. RESET UNIVERSAL */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3. ESTILOS GERAIS DO BODY */
+body {
+    font-family: var(--body-font);
+    color: var(--accent1-color);
+    line-height: 1.6;
+}
+
+/* 4. LARGURA E CENTRALIZAÇÃO (Máximo 840px conforme requisito) */
+header,
+main,
+footer {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+/* 5. HEADER COM CSS GRID (Requisito da Week 04) */
+header {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    /* Coluna do logo e coluna do nav */
+    align-items: center;
+    padding: 10px 0;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+    justify-self: start;
+}
+
+/* 6. NAV DO HEADER COM CSS FLEX (Requisito da Week 04) */
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: 10px;
+}
+
+header nav a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* 7. ESTILO DOS TÍTULOS */
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin: 20px 0;
+}
+
+/* 8. HERO SECTION COM OVERLAYS (Position Absolute/Relative) */
+.hero {
+    position: relative;
+    width: 100%;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(38, 70, 83, 0.7);
+    /* Accent1 com transparência */
+    color: #ffffff;
+    padding: 15px;
+    margin: 0;
+}
+
+.hero article {
+    position: absolute;
+    top: 160px;
+    left: 40px;
+    right: 40px;
+    background-color: rgba(233, 196, 106, 0.85);
+    /* Accent2 com transparência */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.hero article img {
+    float: right;
+    width: 150px;
+    height: auto;
+    margin-left: 15px;
+    border: 2px solid var(--primary-color);
+}
+
+.hero article p {
+    margin: 0;
+    padding: 0;
+}
+
+/* 9. SEÇÕES DE CONTEÚDO */
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* 10. GALERIA DE AVENTURAS (Fix para desproporção das imagens) */
+.adventure-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.adventure-gallery figure {
+    flex: 1;
+    /* Garante que todos os 5 ocupem espaço igual */
+    margin: 0;
+    text-align: center;
+}
+
+.adventure-gallery img {
+    width: 100%;
+    /* Preenche a largura do figure */
+    height: 160px;
+    /* ALTURA FIXA: Resolve a desproporção */
+    object-fit: cover;
+    /* Recorta a imagem para caber sem achatar */
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.adventure-gallery figcaption {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* 11. FOOTER COM FLEXBOX E ALINHAMENTO */
+footer {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Nav de Redes Sociais no Footer */
+.socialmedia {
+    display: flex;
+    align-items: center;
+}
+
+.socialmedia a {
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.socialmedia img {
+    width: 32px;
+    /* Ícones pequenos e consistentes */
+    height: auto;
+    transition: transform 0.2s;
+}
+
+.socialmedia img:hover {
+    transform: scale(1.1);
+}
