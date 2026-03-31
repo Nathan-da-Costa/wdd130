@@ -1,30 +1,39 @@
-/* --- 1. RESET UNIVERSAL (Essencial para remover margens padrão) --- */
+/* --- 1. VARIÁVEIS :ROOT (Obrigatório para a nota) --- */
+:root {
+    --primary-color: #055a05;
+    /* Verde Escuro */
+    --secondary-color: #264653;
+    /* Azul Petróleo */
+    --accent-color: #f4a261;
+    /* Cor de destaque opcional */
+    --white: #ffffff;
+    --background-overlay: rgba(38, 70, 83, 0.8);
+    /* Fundo do H1 com mais contraste */
+    --article-bg: rgba(255, 255, 255, 0.9);
+}
+
+/* --- 2. RESET UNIVERSAL --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* --- 2. CENTRALIZAÇÃO E LARGURA (Isso conserta o site no canto) --- */
+/* --- 3. CENTRALIZAÇÃO E LARGURA --- */
 header,
 main,
 footer {
     max-width: 840px;
-    /* Largura padrão exigida pelo curso */
     margin: 0 auto;
-    /* Isos centraliza o site na tela */
     padding: 10px;
 }
 
-/* --- 3. HEADER LAYOUT (CSS Grid conforme Semana 04) --- */
+/* --- 4. HEADER LAYOUT (Grid) --- */
 header {
     display: grid;
     grid-template-columns: 150px 1fr;
-    /* Coluna fixa para logo, 1fr para a nav ocupando o resto */
     align-items: center;
-    /* Alinha verticalmente */
-    background-color: hwb(0 100% 0%);
-    /* Cor de exemplo secondary, mude conforme sua :root */
+    background-color: var(--white);
 }
 
 header img {
@@ -33,20 +42,16 @@ header img {
 
 header nav {
     display: flex;
-    /* Flexbox para os links na horizontal */
     justify-content: space-around;
-    /* Espalha os links uniformemente */
 }
 
 header nav a {
     text-decoration: none;
-    /* Remove sublinhado */
-    color: #055a05;
-    /* Cor de exemplo primary, mude conforme sua :root */
+    color: var(--primary-color);
     font-weight: bold;
 }
 
-/* --- 4. HERO SECTION (Posicionamento sobre a imagem) --- */
+/* --- 5. HERO SECTION --- */
 .hero {
     position: relative;
 }
@@ -61,10 +66,10 @@ h1 {
     top: 20px;
     width: 100%;
     text-align: center;
-    background-color: rgba(38, 70, 83, 0.7);
-    /* Transparência no fundo */
-    color: white;
-    padding: 10px;
+    background-color: var(--background-overlay);
+    color: var(--white);
+    /* Corrigido para passar no teste de contraste */
+    padding: 15px;
 }
 
 .hero article {
@@ -72,21 +77,21 @@ h1 {
     top: 100px;
     left: 40px;
     right: 40px;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 15px;
+    background-color: var(--article-bg);
+    padding: 20px;
+    border-radius: 5px;
 }
 
 .hero article img {
     float: right;
-    width: 120px;
+    width: 150px;
     margin-left: 15px;
 }
 
-/* --- 5. HISTORY SECTION (Grid de 3 colunas e imagem normal) --- */
+/* --- 6. HISTORY SECTION --- */
 .history-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    /* Três colunas iguais conforme o wireframe */
     gap: 20px;
     align-items: center;
     margin: 30px 0;
@@ -94,27 +99,24 @@ h1 {
 
 .history-content img {
     width: 100%;
-    max-width: 200px;
-    /* Impede a imagem de ficar gigante como na sua imagem de erro */
+    max-width: 250px;
     height: auto;
     justify-self: center;
-    /* Centraliza a imagem na coluna dela */
 }
 
-/* --- 6. ADVENTURES SECTION (Grid aplicado direto na Section, auditor feliz) --- */
+/* --- 7. ADVENTURES SECTION (Imagens alinhadas e proporcionais) --- */
 .adventures {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    /* 5 colunas para os 5 figures */
-    gap: 10px;
+    gap: 15px;
     margin: 30px 0;
     text-align: center;
 }
 
 .adventures h2 {
     grid-column: 1 / -1;
-    /* O título ocupa toda a largura superior */
     margin-bottom: 20px;
+    color: var(--secondary-color);
 }
 
 .adventures figure {
@@ -124,33 +126,37 @@ h1 {
 .adventures img {
     width: 100%;
     height: 150px;
-    /* Mantém todas as imagens com a mesma altura e alinhadas */
+    /* Altura fixa para manter o alinhamento */
     object-fit: cover;
-    /* Garante que a imagem não fique esticada ou esmagada */
-    border: 1px solid #ccc;
+    /* Garante que a imagem não estique */
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .adventures figcaption {
     margin-top: 10px;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
-/* --- 7. FOOTER (Flexbox) --- */
+/* --- 8. FOOTER --- */
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
 }
 
 .socialmedia {
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 .socialmedia img {
-    width: 35px;
+    width: 30px;
+    height: auto;
 }
 
 .socialmedia a {
