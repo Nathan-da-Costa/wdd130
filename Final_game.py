@@ -5,7 +5,7 @@
 
 #Creativity: 
 #I added a third hidden option in the first level (FLYING CAR) to exceed 
-the 'two-choice' requirement and created multiple ending scenarios 
+#the 'two-choice' requirement and created multiple ending scenarios 
 #based on Harry Potter.
 
 
