@@ -1,9 +1,9 @@
-/* --- 1. VARIÁVEIS :ROOT (Resolvendo o erro de variável não usada) --- */
+/* --- 1. VARIÁVEIS :ROOT --- */
 :root {
     --primary-color: #055a05;
     --secondary-color: #264653;
     --accent-color: #f4a261;
-    /* Agora usada no Hover e Bordas */
+    /* AGORA SENDO USADA NO HOVER E BORDAS */
     --white: #ffffff;
     --black: #000000;
     --background-overlay: rgba(38, 70, 83, 0.8);
@@ -28,7 +28,7 @@ footer {
     padding: 10px;
 }
 
-/* --- 4. HEADER LAYOUT (Grid) --- */
+/* --- 4. HEADER LAYOUT --- */
 header {
     display: grid;
     grid-template-columns: 150px 1fr;
@@ -53,13 +53,13 @@ header nav a {
     transition: 0.3s;
 }
 
-/* Resolvendo o erro de variável não usada (--accent-color) */
+/* RESOLVE O ERRO DE VARIÁVEL NÃO USADA */
 header nav a:hover {
     color: var(--accent-color);
     text-decoration: underline;
 }
 
-/* --- 5. HERO SECTION (Posicionamento Absolute) --- */
+/* --- 5. HERO SECTION --- */
 .hero {
     position: relative;
     font-family: var(--heading-font);
@@ -96,7 +96,7 @@ h1 {
     margin-left: 15px;
 }
 
-/* --- 6. HISTORY SECTION (Grid 3 Colunas) --- */
+/* --- 6. HISTORY SECTION --- */
 .history-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -113,7 +113,7 @@ h1 {
     justify-self: center;
 }
 
-/* --- 7. ADVENTURES SECTION (Imagens Alinhadas) --- */
+/* --- 7. ADVENTURES SECTION --- */
 .adventures {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -138,7 +138,7 @@ h1 {
     height: 150px;
     object-fit: cover;
     border: 2px solid var(--accent-color);
-    /* Uso adicional da variável accent */
+    /* USO ADICIONAL DA VARIÁVEL */
     border-radius: 4px;
 }
 
@@ -149,7 +149,7 @@ h1 {
     font-family: var(--paragraph-font);
 }
 
-/* --- 8. FOOTER (Flexbox) --- */
+/* --- 8. FOOTER --- */
 footer {
     display: flex;
     justify-content: space-between;
