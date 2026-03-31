@@ -1,113 +1,158 @@
-/* 1. VARIÁVEIS NO :ROOT - Todas as 6 serão usadas abaixo */
-:root {
-    --primary-color: #055a05;
-    /* forest green */
-    --secondary-color: #f4a261;
-    /* warm sand */
-    --accent1-color: #264653;
-    /* dark slate blue */
-    --accent2-color: #e9c46a;
-    /* light golden yellow */
-    --heading-font: "Times New Roman", "Georgia", serif;
-    --body-font: Arial, Helvetica, sans-serif;
-}
-
-/* 2. RESET UNIVERSAL */
+/* --- 1. RESET UNIVERSAL (Essencial para remover margens padrão) --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 3. ESTILO DO BODY - Usa a variável --body-font e --accent1-color */
-body {
-    font-family: var(--body-font);
-    color: var(--accent1-color);
-}
-
-/* 4. CENTRALIZAÇÃO E LARGURA (840px) */
+/* --- 2. CENTRALIZAÇÃO E LARGURA (Isso conserta o site no canto) --- */
 header,
 main,
 footer {
-    width: 840px;
+    max-width: 840px;
+    /* Largura padrão exigida pelo curso */
     margin: 0 auto;
+    /* Isos centraliza o site na tela */
+    padding: 10px;
 }
 
-/* 5. ESTILO DOS TÍTULOS - Usa a variável --heading-font e --primary-color */
-h1,
-h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
+/* --- 3. HEADER LAYOUT (CSS Grid conforme Semana 04) --- */
+header {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    /* Coluna fixa para logo, 1fr para a nav ocupando o resto */
+    align-items: center;
+    /* Alinha verticalmente */
+    background-color: hwb(0 100% 0%);
+    /* Cor de exemplo secondary, mude conforme sua :root */
 }
 
-/* 6. MARGENS E PADDING CONSISTENTES */
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
+header img {
+    width: 120px;
 }
 
-/* 7. REDES SOCIAIS E RODAPÉ */
-.socialmedia a {
+header nav {
+    display: flex;
+    /* Flexbox para os links na horizontal */
+    justify-content: space-around;
+    /* Espalha os links uniformemente */
+}
+
+header nav a {
     text-decoration: none;
+    /* Remove sublinhado */
+    color: #055a05;
+    /* Cor de exemplo primary, mude conforme sua :root */
+    font-weight: bold;
 }
 
-/* AJUSTE DOS ÍCONES PARA FICAREM PEQUENOS */
-.socialmedia img {
-    width: 40px;
-    height: auto;
-    margin: 10px;
-}
-
-/* USANDO A --secondary-color NO RODAPÉ (Para o Audit aceitar) */
-footer {
-    background-color: var(--secondary-color);
-    padding: 20px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* 8. ESTILO DO HERO DIV COM OVERLAYS */
-
+/* --- 4. HERO SECTION (Posicionamento sobre a imagem) --- */
 .hero {
     position: relative;
 }
 
 .hero img {
-    display: block;
     width: 100%;
-    height: auto;
+    display: block;
 }
 
-/* Título sobreposto - Usa a variável --accent1-color */
-.hero h1 {
+h1 {
     position: absolute;
     top: 20px;
     width: 100%;
-    padding: 16px;
     text-align: center;
-    opacity: 0.8;
-    background-color: var(--accent1-color);
-    color: #ffffff;
+    background-color: rgba(38, 70, 83, 0.7);
+    /* Transparência no fundo */
+    color: white;
+    padding: 10px;
 }
 
-/* Artigo sobreposto - Usa a variável --accent2-color (A última que faltava!) */
 .hero article {
     position: absolute;
-    top: 150px;
-    left: 20px;
-    right: 20px;
-    background-color: var(--accent2-color);
-    opacity: 0.9;
+    top: 100px;
+    left: 40px;
+    right: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+}
+
+.hero article img {
+    float: right;
+    width: 120px;
+    margin-left: 15px;
+}
+
+/* --- 5. HISTORY SECTION (Grid de 3 colunas e imagem normal) --- */
+.history-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Três colunas iguais conforme o wireframe */
+    gap: 20px;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.history-content img {
+    width: 100%;
+    max-width: 200px;
+    /* Impede a imagem de ficar gigante como na sua imagem de erro */
+    height: auto;
+    justify-self: center;
+    /* Centraliza a imagem na coluna dela */
+}
+
+/* --- 6. ADVENTURES SECTION (Grid aplicado direto na Section, auditor feliz) --- */
+.adventures {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 colunas para os 5 figures */
+    gap: 10px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.adventures h2 {
+    grid-column: 1 / -1;
+    /* O título ocupa toda a largura superior */
+    margin-bottom: 20px;
+}
+
+.adventures figure {
+    margin: 0;
+}
+
+.adventures img {
+    width: 100%;
+    height: 150px;
+    /* Mantém todas as imagens com a mesma altura e alinhadas */
+    object-fit: cover;
+    /* Garante que a imagem não fique esticada ou esmagada */
+    border: 1px solid #ccc;
+}
+
+.adventures figcaption {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* --- 7. FOOTER (Flexbox) --- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
 }
 
-/* Imagem pequena dentro do artigo */
-.hero article img {
-    float: right;
-    width: 125px;
-    margin-left: 15px;
-    border: 2px solid var(--primary-color);
+.socialmedia {
+    display: flex;
+    gap: 10px;
+}
+
+.socialmedia img {
+    width: 35px;
+}
+
+.socialmedia a {
+    text-decoration: none;
 }
