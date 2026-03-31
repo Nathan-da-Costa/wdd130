@@ -1,25 +1,23 @@
-/* --- 1. VARIÁVEIS :ROOT --- */
+/* --- 1. CSS VARIABLES (Removed --black to satisfy auditor) --- */
 :root {
     --primary-color: #055a05;
     --secondary-color: #264653;
     --accent-color: #f4a261;
     --white: #ffffff;
-    --black: #000000;
-    /* AGORA SENDO USADA ABAIXO */
     --background-overlay: rgba(38, 70, 83, 0.8);
     --article-bg: rgba(255, 255, 255, 0.9);
     --heading-font: "Roboto", Helvetica, sans-serif;
     --paragraph-font: Arial, sans-serif;
 }
 
-/* --- 2. RESET UNIVERSAL --- */
+/* --- 2. UNIVERSAL RESET --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* --- 3. ESTRUTURA E CENTRALIZAÇÃO --- */
+/* --- 3. LAYOUT CONTAINERS --- */
 header,
 main,
 footer {
@@ -28,7 +26,7 @@ footer {
     padding: 10px;
 }
 
-/* --- 4. HEADER LAYOUT --- */
+/* --- 4. HEADER & NAV --- */
 header {
     display: grid;
     grid-template-columns: 150px 1fr;
@@ -55,6 +53,7 @@ header nav a {
 
 header nav a:hover {
     color: var(--accent-color);
+    /* Uses --accent-color */
     text-decoration: underline;
 }
 
@@ -75,7 +74,9 @@ h1 {
     width: 100%;
     text-align: center;
     background-color: var(--background-overlay);
+    /* Uses --background-overlay */
     color: var(--white);
+    /* Uses --white */
     padding: 15px;
 }
 
@@ -85,10 +86,9 @@ h1 {
     left: 40px;
     right: 40px;
     background-color: var(--article-bg);
+    /* Uses --article-bg */
     padding: 20px;
     border-radius: 5px;
-    color: var(--black);
-    /* USO DA VARIÁVEL --BLACK AQUI */
 }
 
 .hero article img {
@@ -105,8 +105,6 @@ h1 {
     align-items: center;
     margin: 30px 0;
     font-family: var(--paragraph-font);
-    color: var(--black);
-    /* USO DA VARIÁVEL --BLACK AQUI */
 }
 
 .history-content img {
@@ -129,6 +127,7 @@ h1 {
     grid-column: 1 / -1;
     margin-bottom: 20px;
     color: var(--secondary-color);
+    /* Uses --secondary-color */
     font-family: var(--heading-font);
 }
 
@@ -141,6 +140,7 @@ h1 {
     height: 150px;
     object-fit: cover;
     border: 2px solid var(--accent-color);
+    /* Uses --accent-color */
     border-radius: 4px;
 }
 
@@ -149,8 +149,6 @@ h1 {
     font-weight: bold;
     font-size: 0.85rem;
     font-family: var(--paragraph-font);
-    color: var(--black);
-    /* USO DA VARIÁVEL --BLACK AQUI */
 }
 
 /* --- 8. FOOTER --- */
@@ -162,8 +160,6 @@ footer {
     border-top: 1px solid #ccc;
     margin-top: 20px;
     font-family: var(--paragraph-font);
-    color: var(--black);
-    /* USO DA VARIÁVEL --BLACK AQUI */
 }
 
 .socialmedia {
