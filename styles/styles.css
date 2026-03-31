@@ -1,0 +1,69 @@
+/* --- Navigation --- */
+nav {
+    background-color: #333;
+    padding: 1rem;
+}
+
+nav a {
+    color: #fff;
+    padding: 0.5rem;
+    display: block;
+    /* Requisito para links de navegação em bloco */
+    text-decoration: none;
+}
+
+/* --- Main Content --- */
+main {
+    max-width: 840px;
+    /* Limite de largura solicitado */
+    margin: 0 auto;
+    /* Centraliza o conteúdo principal */
+}
+
+h1 {
+    color: #222;
+    text-align: center;
+    /* Opcional, mas ajuda no design */
+}
+
+main img {
+    width: 150px;
+    height: auto;
+    /* Mantém o aspecto (aspect ratio) */
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Aside --- */
+aside {
+    width: 20rem;
+    margin: 1rem;
+    border: 1px solid rgb(0 0 0 / 0.2);
+    /* Borda sutil e transparente conforme instrução */
+    padding: 1rem;
+    background-color: #eee;
+    color: #333;
+    text-align: center;
+}
+
+aside img {
+    width: 200px;
+    height: auto;
+}
+
+/* --- General --- */
+p {
+    padding: 0;
+    /* Removendo padding conforme solicitado */
+}
+
+/* --- Footer --- */
+footer {
+    margin-top: 15px;
+    /* Separação do main */
+    border-top: 1px solid #000;
+    /* Linha de distinção */
+    text-align: center;
+    /* Alinhamento central */
+}
