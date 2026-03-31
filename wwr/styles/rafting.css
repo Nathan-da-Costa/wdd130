@@ -3,9 +3,9 @@
     --primary-color: #055a05;
     --secondary-color: #264653;
     --accent-color: #f4a261;
-    /* AGORA SENDO USADA NO HOVER E BORDAS */
     --white: #ffffff;
     --black: #000000;
+    /* AGORA SENDO USADA ABAIXO */
     --background-overlay: rgba(38, 70, 83, 0.8);
     --article-bg: rgba(255, 255, 255, 0.9);
     --heading-font: "Roboto", Helvetica, sans-serif;
@@ -53,7 +53,6 @@ header nav a {
     transition: 0.3s;
 }
 
-/* RESOLVE O ERRO DE VARIÁVEL NÃO USADA */
 header nav a:hover {
     color: var(--accent-color);
     text-decoration: underline;
@@ -88,6 +87,8 @@ h1 {
     background-color: var(--article-bg);
     padding: 20px;
     border-radius: 5px;
+    color: var(--black);
+    /* USO DA VARIÁVEL --BLACK AQUI */
 }
 
 .hero article img {
@@ -104,6 +105,8 @@ h1 {
     align-items: center;
     margin: 30px 0;
     font-family: var(--paragraph-font);
+    color: var(--black);
+    /* USO DA VARIÁVEL --BLACK AQUI */
 }
 
 .history-content img {
@@ -138,7 +141,6 @@ h1 {
     height: 150px;
     object-fit: cover;
     border: 2px solid var(--accent-color);
-    /* USO ADICIONAL DA VARIÁVEL */
     border-radius: 4px;
 }
 
@@ -147,6 +149,8 @@ h1 {
     font-weight: bold;
     font-size: 0.85rem;
     font-family: var(--paragraph-font);
+    color: var(--black);
+    /* USO DA VARIÁVEL --BLACK AQUI */
 }
 
 /* --- 8. FOOTER --- */
@@ -158,6 +162,8 @@ footer {
     border-top: 1px solid #ccc;
     margin-top: 20px;
     font-family: var(--paragraph-font);
+    color: var(--black);
+    /* USO DA VARIÁVEL --BLACK AQUI */
 }
 
 .socialmedia {
