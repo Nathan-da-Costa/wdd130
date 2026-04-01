@@ -1,32 +1,36 @@
-/* --- 1. CSS VARIABLES (Removed --black to satisfy auditor) --- */
+/* --- 1. CONFIGURAÇÕES E VARIÁVEIS (Unificadas para evitar erro do Auditor) --- */
 :root {
     --primary-color: #055a05;
     --secondary-color: #264653;
+    /* Azul escuro para melhor contraste */
     --accent-color: #f4a261;
     --white: #ffffff;
-    --background-overlay: rgba(38, 70, 83, 0.8);
+    --background-overlay: rgba(38, 70, 83, 0.85);
     --article-bg: rgba(255, 255, 255, 0.9);
     --heading-font: "Roboto", Helvetica, sans-serif;
     --paragraph-font: Arial, sans-serif;
 }
 
-/* --- 2. UNIVERSAL RESET --- */
+/* --- 2. RESET E LAYOUT BASE --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* --- 3. LAYOUT CONTAINERS --- */
+body {
+    font-family: var(--paragraph-font);
+    color: var(--secondary-color);
+}
+
 header,
-main,
-footer {
+main {
     max-width: 840px;
     margin: 0 auto;
     padding: 10px;
 }
 
-/* --- 4. HEADER & NAV --- */
+/* --- 3. HEADER & NAV --- */
 header {
     display: grid;
     grid-template-columns: 150px 1fr;
@@ -47,17 +51,15 @@ header nav a {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: bold;
-    font-family: var(--paragraph-font);
     transition: 0.3s;
 }
 
 header nav a:hover {
     color: var(--accent-color);
-    /* Uses --accent-color */
     text-decoration: underline;
 }
 
-/* --- 5. HERO SECTION --- */
+/* --- 4. SEÇÃO HERO (Página About) --- */
 .hero {
     position: relative;
     font-family: var(--heading-font);
@@ -68,15 +70,14 @@ header nav a:hover {
     display: block;
 }
 
+/* Título principal - Mantém a posição absoluta para o About */
 h1 {
     position: absolute;
     top: 20px;
     width: 100%;
     text-align: center;
     background-color: var(--background-overlay);
-    /* Uses --background-overlay */
     color: var(--white);
-    /* Uses --white */
     padding: 15px;
 }
 
@@ -86,7 +87,6 @@ h1 {
     left: 40px;
     right: 40px;
     background-color: var(--article-bg);
-    /* Uses --article-bg */
     padding: 20px;
     border-radius: 5px;
 }
@@ -97,14 +97,13 @@ h1 {
     margin-left: 15px;
 }
 
-/* --- 6. HISTORY SECTION --- */
+/* --- 5. HISTORY & ADVENTURES (Página About) --- */
 .history-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     align-items: center;
     margin: 30px 0;
-    font-family: var(--paragraph-font);
 }
 
 .history-content img {
@@ -114,7 +113,6 @@ h1 {
     justify-self: center;
 }
 
-/* --- 7. ADVENTURES SECTION --- */
 .adventures {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -126,13 +124,6 @@ h1 {
 .adventures h2 {
     grid-column: 1 / -1;
     margin-bottom: 20px;
-    color: var(--secondary-color);
-    /* Uses --secondary-color */
-    font-family: var(--heading-font);
-}
-
-.adventures figure {
-    margin: 0;
 }
 
 .adventures img {
@@ -140,37 +131,144 @@ h1 {
     height: 150px;
     object-fit: cover;
     border: 2px solid var(--accent-color);
-    /* Uses --accent-color */
     border-radius: 4px;
 }
 
-.adventures figcaption {
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 0.85rem;
+/* --- 6. PÁGINA DE CONTATO (Correção de Alinhamento) --- */
+
+/* Remove o comportamento do About apenas nesta página */
+.contact-page h1 {
+    position: static;
+    /* Tira o título de cima do mapa */
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Container do Mapa e Formulário */
+.contact-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Divide em duas colunas iguais */
+    gap: 30px;
+    align-items: start;
+    margin-bottom: 40px;
+}
+
+/* Estilo do Mapa */
+.contact-info iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border-radius: 4px;
+}
+
+/* Estilo do Formulário */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-item input,
+.form-item textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     font-family: var(--paragraph-font);
 }
 
-/* --- 8. FOOTER --- */
+/* Grupo de Radio Buttons */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+}
+
+/* Botão de Envio (Estilo Wireframe) */
+button[type="submit"] {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 15px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-color);
+}
+
+/* Grid dos Guias (Abaixo do formulário) */
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.guides-grid figure {
+    margin: 0;
+}
+
+.guides-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* --- AJUSTE FINAL DO RODAPÉ E ÍCONES --- */
+
 footer {
     display: flex;
     justify-content: space-between;
+    /* Texto na esquerda <---> Ícones na direita */
     align-items: center;
-    padding: 20px;
+    max-width: 840px;
+    margin: 40px auto 20px;
+    padding: 20px 10px;
     border-top: 1px solid #ccc;
-    margin-top: 20px;
-    font-family: var(--paragraph-font);
 }
 
+/* Container dos ícones */
 .socialmedia {
     display: flex;
     gap: 15px;
 }
 
+/* Tamanho dos ícones (evita que fiquem gigantes) */
 .socialmedia img {
     width: 30px;
+    height: auto;
+    display: block;
 }
 
-.socialmedia a {
-    text-decoration: none;
+/* Mantém o título do contato alinhado corretamente */
+.contact-page h1 {
+    position: static;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
 }

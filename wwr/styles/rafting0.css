@@ -1,0 +1,176 @@
+/* --- 1. CSS VARIABLES (Removed --black to satisfy auditor) --- */
+:root {
+    --primary-color: #055a05;
+    --secondary-color: #264653;
+    --accent-color: #f4a261;
+    --white: #ffffff;
+    --background-overlay: rgba(38, 70, 83, 0.8);
+    --article-bg: rgba(255, 255, 255, 0.9);
+    --heading-font: "Roboto", Helvetica, sans-serif;
+    --paragraph-font: Arial, sans-serif;
+}
+
+/* --- 2. UNIVERSAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- 3. LAYOUT CONTAINERS --- */
+header,
+main,
+footer {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* --- 4. HEADER & NAV --- */
+header {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    background-color: var(--white);
+}
+
+header img {
+    width: 120px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-family: var(--paragraph-font);
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: var(--accent-color);
+    /* Uses --accent-color */
+    text-decoration: underline;
+}
+
+/* --- 5. HERO SECTION --- */
+.hero {
+    position: relative;
+    font-family: var(--heading-font);
+}
+
+.hero img {
+    width: 100%;
+    display: block;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: var(--background-overlay);
+    /* Uses --background-overlay */
+    color: var(--white);
+    /* Uses --white */
+    padding: 15px;
+}
+
+.hero article {
+    position: absolute;
+    top: 100px;
+    left: 40px;
+    right: 40px;
+    background-color: var(--article-bg);
+    /* Uses --article-bg */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.hero article img {
+    float: right;
+    width: 150px;
+    margin-left: 15px;
+}
+
+/* --- 6. HISTORY SECTION --- */
+.history-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    margin: 30px 0;
+    font-family: var(--paragraph-font);
+}
+
+.history-content img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    justify-self: center;
+}
+
+/* --- 7. ADVENTURES SECTION --- */
+.adventures {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.adventures h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    /* Uses --secondary-color */
+    font-family: var(--heading-font);
+}
+
+.adventures figure {
+    margin: 0;
+}
+
+.adventures img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+    /* Uses --accent-color */
+    border-radius: 4px;
+}
+
+.adventures figcaption {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    font-family: var(--paragraph-font);
+}
+
+/* --- 8. FOOTER --- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    font-family: var(--paragraph-font);
+}
+
+.socialmedia {
+    display: flex;
+    gap: 15px;
+}
+
+.socialmedia img {
+    width: 30px;
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
