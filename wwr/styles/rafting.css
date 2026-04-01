@@ -1,8 +1,7 @@
-/* --- 1. CONFIGURAÇÕES E VARIÁVEIS (Unificadas para evitar erro do Auditor) --- */
+/* --- 1. CONFIGURAÇÕES E VARIÁVEIS --- */
 :root {
     --primary-color: #055a05;
     --secondary-color: #264653;
-    /* Azul escuro para melhor contraste */
     --accent-color: #f4a261;
     --white: #ffffff;
     --background-overlay: rgba(38, 70, 83, 0.85);
@@ -23,6 +22,7 @@ body {
     color: var(--secondary-color);
 }
 
+/* Removido o footer daqui para permitir o alinhamento Flexbox */
 header,
 main {
     max-width: 840px;
@@ -70,7 +70,6 @@ header nav a:hover {
     display: block;
 }
 
-/* Título principal - Mantém a posição absoluta para o About */
 h1 {
     position: absolute;
     top: 20px;
@@ -134,12 +133,10 @@ h1 {
     border-radius: 4px;
 }
 
-/* --- 6. PÁGINA DE CONTATO (Correção de Alinhamento) --- */
+/* --- 6. PÁGINA DE CONTATO --- */
 
-/* Remove o comportamento do About apenas nesta página */
 .contact-page h1 {
     position: static;
-    /* Tira o título de cima do mapa */
     background-color: var(--secondary-color);
     color: var(--white);
     padding: 20px;
@@ -147,25 +144,21 @@ h1 {
     text-align: center;
 }
 
-/* Container do Mapa e Formulário */
 .contact-grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* Divide em duas colunas iguais */
     gap: 30px;
     align-items: start;
     margin-bottom: 40px;
 }
 
-/* Estilo do Mapa */
 .contact-info iframe {
     width: 100%;
     height: 400px;
-    border: 0;
+    border: none;
     border-radius: 4px;
 }
 
-/* Estilo do Formulário */
 .contact-form form {
     display: flex;
     flex-direction: column;
@@ -183,25 +176,8 @@ h1 {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-family: var(--paragraph-font);
 }
 
-/* Grupo de Radio Buttons */
-.radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin: 10px 0;
-}
-
-.radio-group label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: normal;
-}
-
-/* Botão de Envio (Estilo Wireframe) */
 button[type="submit"] {
     background-color: var(--secondary-color);
     color: var(--white);
@@ -217,17 +193,12 @@ button[type="submit"]:hover {
     background-color: var(--primary-color);
 }
 
-/* Grid dos Guias (Abaixo do formulário) */
 .guides-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     text-align: center;
     margin-top: 40px;
-}
-
-.guides-grid figure {
-    margin: 0;
 }
 
 .guides-grid img {
@@ -237,38 +208,27 @@ button[type="submit"]:hover {
     border-radius: 4px;
 }
 
-/* --- AJUSTE FINAL DO RODAPÉ E ÍCONES --- */
+/* --- 7. RODAPÉ (FOOTER) --- */
 
 footer {
     display: flex;
     justify-content: space-between;
-    /* Texto na esquerda <---> Ícones na direita */
+    /* Empurra ícones para a extrema direita */
     align-items: center;
     max-width: 840px;
-    margin: 40px auto 20px;
+    margin: 40px auto;
     padding: 20px 10px;
     border-top: 1px solid #ccc;
 }
 
-/* Container dos ícones */
 .socialmedia {
     display: flex;
     gap: 15px;
 }
 
-/* Tamanho dos ícones (evita que fiquem gigantes) */
 .socialmedia img {
     width: 30px;
+    /* Resolve o problema dos ícones gigantes */
     height: auto;
     display: block;
-}
-
-/* Mantém o título do contato alinhado corretamente */
-.contact-page h1 {
-    position: static;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    padding: 20px;
-    margin-bottom: 20px;
-    text-align: center;
 }
