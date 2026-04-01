@@ -174,3 +174,180 @@ footer {
 .socialmedia a {
     text-decoration: none;
 }
+
+/* --- 1. VARIÁVEIS (Todas usadas) --- */
+:root {
+    --primary-color: #055a05;
+    --secondary-color: #264653;
+    --accent-color: #f4a261;
+    --white: #ffffff;
+    --background-overlay: rgba(38, 70, 83, 0.8);
+    --article-bg: rgba(255, 255, 255, 0.9);
+    --heading-font: "Roboto", Helvetica, sans-serif;
+    --paragraph-font: Arial, sans-serif;
+}
+
+/* --- 2. RESET E ESTRUTURA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header,
+main,
+footer {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* --- 3. HEADER & NAVEGAÇÃO --- */
+header {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    background-color: var(--white);
+}
+
+header img {
+    width: 120px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-family: var(--paragraph-font);
+}
+
+header nav a:hover {
+    color: var(--accent-color);
+}
+
+/* --- 4. HERO (Para Index e About) --- */
+.hero {
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+    display: block;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: var(--background-overlay);
+    color: var(--white);
+    padding: 15px;
+}
+
+.hero article {
+    position: absolute;
+    top: 100px;
+    left: 40px;
+    right: 40px;
+    background-color: var(--article-bg);
+    padding: 20px;
+}
+
+/* --- 5. PÁGINA DE CONTATO (Específicos) --- */
+
+/* Resolve o título gigante no topo */
+.contact-title {
+    position: static;
+    background: none;
+    color: var(--secondary-color);
+    margin: 20px 0;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.team-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+}
+
+/* Formulário Estilizado */
+.contact-form {
+    background-color: var(--article-bg);
+    padding: 20px;
+    border: 1px solid #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-item {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-item {
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+input,
+textarea,
+fieldset {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 15px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+iframe {
+    border: none;
+}
+
+/* --- 6. FOOTER --- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.socialmedia img {
+    width: 30px;
+}
